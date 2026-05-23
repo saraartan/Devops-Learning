@@ -1,0 +1,135 @@
+# CoderCo Flask + Redis Docker Challenge
+
+## Overview
+
+This project is a multi-container application built with:
+
+* Python Flask
+* Redis
+* Docker
+* Docker Compose
+
+The Flask web application connects to a Redis database to store and retrieve a visit counter.
+
+---
+
+## Features
+
+* Flask web application
+* Redis key-value database
+* Dockerized services
+* Multi-container setup with Docker Compose
+* Visit counter stored in Redis
+
+---
+
+## Project Structure
+
+```bash
+coderco-challenge/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+```
+
+---
+
+## Flask Routes
+
+### Home Route
+
+```bash
+/
+```
+
+Displays a welcome message.
+
+### Count Route
+
+```bash
+/count
+```
+
+Increments and displays the visit count stored in Redis.
+
+---
+
+## Technologies Used
+
+* Python
+* Flask
+* Redis
+* Docker
+* Docker Compose
+
+---
+
+## How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/saraartan/docker-learning.git
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd docker-learning/coderco-challenge
+```
+
+### 3. Build and Start Containers
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Access the Application
+
+### Home Page
+
+```bash
+http://localhost:5002
+```
+
+### Counter Page
+
+```bash
+http://localhost:5002/count
+```
+
+Refresh the `/count` route to see the counter increase.
+
+---
+
+## Docker Compose Services
+
+### Web Service
+
+Runs the Flask application.
+
+### Redis Service
+
+Stores the visit counter data.
+
+---
+
+## Concepts Practiced
+
+* Containers
+* Docker images
+* Docker Compose
+* Multi-container applications
+* Redis integration
+* Port mapping
+* Environment variables
+
+---
+
+## Author
+
+Sara Artan
