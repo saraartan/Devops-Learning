@@ -1,0 +1,102 @@
+# AWS– Custom VPC Network Project
+
+## Project Overview
+
+In this project, I built a custom AWS networking environment using Amazon VPC.
+
+The goal was to create a secure cloud network with both public and private resources, configure internet access, and test private subnet connectivity using a NAT Gateway.
+
+---
+
+## What I Built
+
+I created the following AWS resources:
+
+### Networking
+- Custom VPC
+- Public Subnet
+- Private Subnet
+- Internet Gateway
+- NAT Gateway
+- Route Tables
+
+### Security
+- Public Security Group
+- Private Security Group
+
+### Compute
+- Public EC2 Instance
+- Private EC2 Instance
+
+---
+
+## Network Architecture
+
+The project was designed so that:
+
+- The **Public EC2 instance** could connect directly to the internet
+- The **Private EC2 instance** remained protected inside the private subnet
+- The **Private EC2** accessed the internet securely through the NAT Gateway
+
+---
+
+## What I Learned
+
+Through this project, I learned:
+
+### AWS Networking Fundamentals
+- How VPCs work
+- How public and private subnets are separated
+- How route tables control network traffic
+
+### Internet Access Configuration
+- How Internet Gateways provide internet access
+- How NAT Gateways allow private resources to access the internet securely
+
+### EC2 Connectivity
+- How to launch EC2 instances inside specific subnets
+- How Security Groups control inbound access
+- How SSH access works in AWS
+
+### Troubleshooting
+- Diagnosing SSH connection issues
+- Understanding key pair authentication
+- Fixing route table and security group configuration problems
+
+---
+
+## Challenges I Faced
+
+### 1. SSH Connection Failures
+**Problem:**  
+I was unable to connect to the EC2 instance.
+
+**Solution:**  
+I updated the Security Group inbound rules to allow SSH access on port 22 from my IP address.
+
+---
+
+### 2. Route Table Configuration Confusion
+**Problem:**  
+I initially associated the wrong subnet with the route table.
+
+**Solution:**  
+I reviewed subnet associations and corrected the public and private route table assignments.
+
+---
+
+### 3. Private EC2 Authentication Issues
+**Problem:**  
+The private instance returned permission denied errors.
+
+**Solution:**  
+I learned how AWS key-based authentication works and understood the correct way to connect between instances.
+
+---
+
+## Validation Test
+
+I verified internet access from the environment using:
+
+```bash
+curl google.com
